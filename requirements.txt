@@ -1,0 +1,26 @@
+---
+
+## 📦 Requirements
+
+- Python 3.x  
+- No external libraries needed (pure standard Python)
+
+---
+
+## 🛠️ How to Use
+
+### 🔹 1. Intercept Login with Burp Suite
+
+- Open **Burp Suite**, enable **intercept**.
+- Submit any login form in your browser (e.g., DVWA, demo site).
+- Right-click the intercepted request → **"Copy to file"** or **"Copy raw"**
+- Save it as `request.txt` in the project folder.
+
+> 📌 Make sure the request contains a parameter like `password=...`
+
+---
+
+### 🔹 2. Run the Script
+
+```bash
+python3 password_tester.py
