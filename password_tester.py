@@ -34,7 +34,7 @@ def extract_password_and_url(request_path):
         with open(request_path, "r") as f:
             raw = f.read()
     except FileNotFoundError:
-        print("❌ Error: request.txt not found.")
+        print(" Error: request.txt not found.")
         return None, None
 
     # Extract URL from request line
@@ -69,22 +69,22 @@ def save_report(url, password, suggestions):
     log_filename = f"{LOG_DIR}/log_{log_number}.txt"
 
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    report = f"""🛡️ Password Policy & Strength Report
+    report = f""" Password Policy & Strength Report
 Timestamp: {timestamp}
 Target URL: {url}
 
 Password Analyzed: {password}
 
-🔍 Strength Check:
-- Length >= 8: {"✅" if len(password) >= 8 else "❌"}
-- Uppercase: {"✅" if any(c.isupper() for c in password) else "❌"}
-- Lowercase: {"✅" if any(c.islower() for c in password) else "❌"}
-- Number: {"✅" if any(c.isdigit() for c in password) else "❌"}
-- Special Character: {"✅" if any(c in "!@#$%^&*()-_=+[{]}|;:',<.>/?`~" for c in password) else "❌"}
+ Strength Check:
+- Length >= 8: {"Strong Password" if len(password) >= 8 else "Weak Password"}
+- Uppercase: {"Strong Password" if any(c.isupper() for c in password) else "Weak Password"}
+- Lowercase: {"Strong Password" if any(c.islower() for c in password) else "Weak Password"}
+- Number: {"Strong Password" if any(c.isdigit() for c in password) else "Weak Password"}
+- Special Character: {"Strong Password" if any(c in "!@#$%^&*()-_=+[{]}|;:',<.>/?`~" for c in password) else "Weak Password"}
 
-🏁 Final Verdict: {"✅ Strong Password" if is_strong(password) else "❌ Weak Password"}
+ Final Verdict: {" Strong Password" if is_strong(password) else " Weak Password"}
 
-💡 Suggested Strong Passwords:
+ Suggested Strong Passwords:
 - {suggestions[0]}
 - {suggestions[1]}
 - {suggestions[2]}
@@ -93,19 +93,19 @@ Password Analyzed: {password}
     with open(log_filename, "w") as f:
         f.write(report)
 
-    print(f"\n✅ Report saved to: {log_filename}")
+    print(f"\n Report saved to: {log_filename}")
 
 
 # -------------------------------
 # Main Execution
 # -------------------------------
 def main():
-    print("🔐 Password Strength Tester (Burp Suite mode)\n")
+    print(" Password Strength Tester (Burp Suite mode)\n")
 
     url, password = extract_password_and_url(REQUEST_FILE)
 
     if not url or not password:
-        print("❌ Could not extract password or URL from request.txt.")
+        print(" Could not extract password or URL from request.txt.")
         return
 
     suggestions = generate_strong_passwords()
