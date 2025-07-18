@@ -1,24 +1,24 @@
-# 🔐 Password Strength & Policy Tester (Burp Suite Powered)
+#  Password Strength & Policy Tester (Burp Suite Powered)
 
 A simple but powerful cybersecurity tool to test password strength and policy compliance using intercepted HTTP login requests from **Burp Suite**.  
 Ideal for penetration testers and developers auditing password policies in web applications.
 
 ---
 
-## 🚀 Features
+##  Features
 
-- ✅ Parses raw HTTP login requests from Burp Suite
-- ✅ Extracts password and target URL automatically
-- ✅ Performs detailed strength analysis:
+-  Parses raw HTTP login requests from Burp Suite
+-  Extracts password and target URL automatically
+-  Performs detailed strength analysis:
   - Length check
   - Uppercase/lowercase/digit/special char checks
-- ✅ Flags weak or commonly used passwords
-- ✅ Generates strong password suggestions
-- ✅ Saves full analysis in numbered log reports
+-  Flags weak or commonly used passwords
+-  Generates strong password suggestions
+-  Saves full analysis in numbered log reports
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 password-policy-tester/
 ├── password_tester.py          # Password analysis
@@ -31,15 +31,15 @@ password-policy-tester/
 
 ---
 
-📖 Step-by-Step Guide (For README)
+ Step-by-Step Guide (For README)
 
-## 📖 How to Use This Project (Step-by-Step)
+  How to Use This Project (Step-by-Step)
 
 Follow these simple steps to test password strength using intercepted login requests:
 
 ---
 
-### 🔹 Step 1: Clone or Download the Project
+ Step 1: Clone or Download the Project
 
 ```bash
 git clone https://github.com/yourusername/password-policy-tester.git
@@ -48,7 +48,7 @@ cd password-policy-tester
 
 ---
 
-🔹 Step 2: Intercept a Login Request with Burp Suite
+ Step 2: Intercept a Login Request with Burp Suite
 
 1. Open Burp Suite → Go to Proxy > Intercept → Make sure Intercept is ON.
 
@@ -66,14 +66,14 @@ cd password-policy-tester
 
 
 
-> 📌 Make sure the request includes something like password=... in the body.
+>  Make sure the request includes something like password=... in the body.
 
 
 
 
 ---
 
-🔹 Step 3: Run the Python Script
+ Step 3: Run the Python Script
 
 python3 password_tester.py
 
@@ -94,7 +94,7 @@ Save a full report in a logs/log_1.txt, log_2.txt, etc.
 
 ---
 
-🔹 Step 4: View the Report
+ Step 4: View the Report
 
 Open the generated log file:
 
@@ -104,16 +104,16 @@ You will see a complete analysis like this:
 
 Password Analyzed: test123
 
-🔍 Strength Check:
-- Length >= 8: ❌
-- Uppercase: ❌
-- Lowercase: ✅
-- Number: ✅
-- Special Character: ❌
+ Strength Check:
+- Length >= 8: 
+- Uppercase: 
+- Lowercase: 
+- Number: 
+- Special Character: 
 
-🏁 Final Verdict: ❌ Weak Password
+ Final Verdict:  Weak Password
 
-💡 Suggested Strong Passwords:
+ Suggested Strong Passwords:
 - Ab7!xLp90Qt#
 - Tr3$Zmn42Kp@
 - Gp#Lk7Wyq@8%
@@ -121,7 +121,7 @@ Password Analyzed: test123
 
 ---
 
-✅ That's It!
+That's It!
 
 You've now tested a password from a real intercepted login request and generated a detailed cybersecurity report.
 You can repeat this with different intercepted requests and passwords.
